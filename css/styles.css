@@ -19,6 +19,7 @@ main {
 }
 
 .arr {
+  color: #f1f1f1;
   cursor: pointer;
   margin: 10px;
   font-size: 40pt;
