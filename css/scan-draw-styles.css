@@ -70,7 +70,7 @@ main {
 
 .step-container {
   position: absolute;
-  right: 40%;
+  
   top: 10%;
   margin: 0 auto;
   cursor: pointer;
@@ -80,7 +80,6 @@ main {
 .arrows-container {
   position: absolute;
   top: 82%;
-  left: 44.8%;
 }
 
 .arrows-container button {
