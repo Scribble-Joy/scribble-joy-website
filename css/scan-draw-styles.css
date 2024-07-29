@@ -236,8 +236,16 @@ main {
   border: 2px solid;
 }
 
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 #retakeBtn {
-  margin-top: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   padding: 10px;
   border: none;
   background-color: #fdab0b;

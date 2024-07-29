@@ -69,9 +69,18 @@ document
   .querySelector(".fa-camera")
   .addEventListener("click", async function () {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: "environment",
+          width: { ideal: 1280 },
+          height: { ideal: 720 },
+        },
+      });
+
       const video = document.createElement("video");
       video.srcObject = stream;
+      video.style.width = "100%"; // Faz o vídeo ocupar o tamanho do form
+      video.style.height = "100%"; // Faz o vídeo ocupar o tamanho do form
       video.play();
 
       const canvas = document.createElement("canvas");
@@ -80,22 +89,26 @@ document
       video.addEventListener("canplay", function () {
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-        stream.getTracks().forEach((track) => track.stop());
 
-        document.querySelector(
-          ".photo"
-        ).innerHTML = `<img src="${canvas.toDataURL()}" alt="Captured Photo" />`;
-        document.querySelector(
-          ".photo"
-        ).innerHTML += `<button id="retakeBtn">Tirar outra foto</button>`;
+        // Aguarda o vídeo começar a tocar para ajustar o canvas
+        setTimeout(() => {
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+          stream.getTracks().forEach((track) => track.stop());
 
-        document
-          .getElementById("retakeBtn")
-          .addEventListener("click", function () {
-            document.querySelector(".photo").innerHTML =
-              '<h3>Tire uma foto do seu desenho</h3><i class="fa-solid fa-camera"></i>';
-          });
+          document.querySelector(
+            ".photo"
+          ).innerHTML = `<img src="${canvas.toDataURL()}" alt="Captured Photo" />`;
+          document.querySelector(
+            ".photo"
+          ).innerHTML += `<button id="retakeBtn">Tirar outra foto</button>`;
+
+          document
+            .getElementById("retakeBtn")
+            .addEventListener("click", function () {
+              document.querySelector(".photo").innerHTML =
+                '<h3>Tire uma foto do seu desenho</h3><i class="fa-solid fa-camera"></i>';
+            });
+        }, 100); // Delay para garantir que o vídeo está carregado
       });
     } catch (err) {
       console.error("Erro ao acessar a câmera: ", err);
