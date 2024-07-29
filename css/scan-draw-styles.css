@@ -24,7 +24,7 @@ header {
   color: #0c0c0c;
   text-align: center;
   padding: 1.2rem;
-  border-radius: 26px;
+  width: 100%;
   background-color: #fdab0b;
 }
 
@@ -252,6 +252,7 @@ main {
   color: #000;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 26px;
 }
 
 #retakeBtn:hover {
