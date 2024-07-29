@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Scan Draw</title>
   <link href="../css/scan-draw-styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="../script/scan-draw-script.js"></script>
 </head>
 
 <body>
@@ -16,12 +17,39 @@
     <h1>ESCANEIE SEU DESENHO AQUI</h1>
   </header>
   <main>
-    <section id="scan-draw">
-      <i class="fa-solid fa-camera"></i>
-    </section>
-    <section id="submission-form-container">
-      <form id="submission-form">
-
+    <section id="form-container">
+      <form id="regForm">
+        <section class="tab photo">
+          <h3>Tire uma foto do seu desenho</h3>
+          <i class="fa-solid fa-camera"></i>
+        </section>
+        <section class="tab">
+          <div class="input__container">
+            <div class="shadow__input"></div>
+            <button class="input__button__shadow">
+              <i class="fa-solid fa-image"></i>
+            </button>
+            <input type="text" name="username" class="input__search" placeholder="Digite o nome" />
+          </div>
+        </section>
+        <section class="tab">
+          <div class="input--container">
+            <div class="shadow__input"></div>
+            <button class="input__button__shadow">
+              <i class="fa-solid fa-envelope"></i>
+            </button>
+            <input type="text" name="username" class="input__search" placeholder="Digite seu email" />
+          </div>
+        </section>
+        <section class="step-container">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </section>
+        <section class="arrows-container">
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fa-solid fa-arrow-left"></i></button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)"><i class="fa-solid fa-arrow-right"></i></button>
+        </section>
       </form>
     </section>
   </main>
