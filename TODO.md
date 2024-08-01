@@ -1,4 +1,6 @@
 # TODO
+*History
+- Add ideas of drawings
 
 * Scan-draw
 - Add form:

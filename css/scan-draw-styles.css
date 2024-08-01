@@ -7,10 +7,6 @@
   font-family: Inter, sans-serif;
 }
 
-a {
-  all: unset;
-}
-
 body {
   background-color: #0c0c0c;
   margin: 0;
@@ -32,6 +28,14 @@ main {
   padding: 3rem;
 }
 
+a {
+  all: unset;
+}
+
+i {
+  cursor: pointer;
+}
+
 #form-container {
   display: flex;
   position: relative;
@@ -44,20 +48,42 @@ main {
   background-color: #fdab0b;
   border-radius: 26px;
   padding: 2rem;
-  height: 100%;
   height: 400px;
   width: 100%;
-  max-width: 500px;
-}
-
-#form-container i {
-  cursor: pointer;
+  max-width: 450px;
 }
 
 .tab {
   display: none;
 }
 
+.photo {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 2px dashed #0c0c0c;
+  border-radius: 26px;
+}
+
+.photo .fa-repeat {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  display: none;
+}
+
+.photo img {
+  margin-top: 10px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
 .photo i {
   margin-top: 20px;
   font-size: 90pt;
@@ -66,6 +92,23 @@ main {
 .arrows-container button {
   all: unset;
   font-size: 16pt;
+}
+
+.arrows-container {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5%;
+  margin: 0 auto;
+  cursor: pointer;
+  user-select: none;
 }
 
 .step {
@@ -87,30 +130,27 @@ main {
   background-color: #04aa6d;
 }
 
-.photo {
-  position: relative;
-  width: 100%;
-  height: 300px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; 
-}
-
 #fileInput {
-  all: unset;
-  background-color: #fdab0b;
+  display: none;
 }
 
-.photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+#photoPreview img {
+  max-width: 100%;
+  height: auto;
+}
+
+#photoPreview {
+  margin-top: 20px;
+}
+
+#retakePhotoBtn {
+  display: none;
+  margin-top: 10px;
 }
 
 #addPhotoBtn {
   position: absolute;
-  bottom: 20px; 
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -119,28 +159,11 @@ main {
   color: #000;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 #addPhotoBtn:hover {
   background-color: #e09b3a;
-}
-
-.step-container {
-  position: absolute;
-  right: 40%;
-  top: 5%; 
-  margin: 0 auto;
-  cursor: pointer;
-  user-select: none;
-}
-
-
-.arrows-container {
-  position: absolute;
-  top: 85%; 
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .input__container {
@@ -382,9 +405,17 @@ main {
   border: 2px solid;
 }
 
-.photo img {
-  margin-top: 10px;
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
+@media screen and (max-width: 900px) {
+  #form-container {
+    max-width: 350px;
+  }
+
+  .photo img {
+    height: 285px;
+    width: 285px;
+  }
+
+  .input__search {
+    font-size: 10pt;
+  }
 }
