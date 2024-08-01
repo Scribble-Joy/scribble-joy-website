@@ -20,17 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
       reader.onload = function (e) {
         const img = document.createElement("img");
         img.src = e.target.result;
-        localStorage.setItem("photo", e.target.result); // Armazenar a imagem no localStorage
-        photoSection.innerHTML = ""; // Limpar a seção de fotos antes de adicionar a nova imagem
+        localStorage.setItem("photo", e.target.result); 
+        photoSection.innerHTML = ""; 
         photoSection.appendChild(img);
-        photoSection.appendChild(repeatIcon); // Adicionar o ícone de repetição
-        repeatIcon.style.display = "block"; // Mostrar o ícone de repetição
+        photoSection.appendChild(repeatIcon); 
+        repeatIcon.style.display = "block"; 
       };
       reader.readAsDataURL(file);
     }
   });
 
-  // Carregar a imagem do localStorage se estiver presente
   const storedPhoto = localStorage.getItem("photo");
   if (storedPhoto) {
     const img = document.createElement("img");
@@ -53,7 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("prevBtn").style.display = "inline";
     }
     if (n === tabs.length - 1) {
-      document.getElementById("nextBtn").innerHTML = "Submit";
+      document.getElementById(
+        "nextBtn"
+      ).innerHTML = `<i class="fa-solid fa-paper-plane"></i>`;
     } else {
       document.getElementById("nextBtn").innerHTML =
         '<i class="fa-solid fa-arrow-right"></i>';
