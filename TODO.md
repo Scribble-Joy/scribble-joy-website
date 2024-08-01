@@ -1,9 +1,13 @@
 # TODO
 *History
-- Add ideas of drawings
+- Add ideas of drawings done
+- Create page
+
+*Museum 
+- Create infinate scroll
 
 * Scan-draw
-- Add form:
+- Add form done:
  - step 1: user takes a picture of the drawing
   - An way to take the picture and put it into an little edit mode before the second step
   - The picture is cached in the browser 
