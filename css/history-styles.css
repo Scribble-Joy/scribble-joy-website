@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+header {
+  color: #f1f1f1;
+  text-align: center;
+  padding: 1.2rem;
+  width: 100%;
+  background-color: #fa5300;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+a {
+  all: unset;
+}
+
+i {
+  cursor: pointer;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 350px;
+  max-height: 500px;
+  border: solid 2px #fa5300;
+  border-radius: 26px;
+  padding: 1.5rem;
+  text-align: center;
+  gap: 1.3rem;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  color: #f1f1f1;
+  gap: 1rem;
+  font-size: 22pt;
+}
+
+.buttons i {
+  background-color: #fa5300;
+  padding: 1rem;
+  border-radius: 20%;
+}
