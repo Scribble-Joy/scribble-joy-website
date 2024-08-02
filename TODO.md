@@ -2,6 +2,10 @@
 *History
 - Add ideas of drawings done
 - Create page
+  - Html, css
+  - Javascript 
+    - Add download e print
+    - for each to get every pdf by an dynamic way
 
 *Museum 
 - Create infinate scroll
